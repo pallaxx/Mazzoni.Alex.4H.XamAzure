@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Mazzoni.Alex._4H.XamAzure.MainPage">
+
+    <StackLayout>
+        <Button Text="Go!" Clicked="Button_Clicked"></Button>
+
+        <!--<ListView x:Name="lvStudenti">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Text="{Binding Nome}" Detail="{Binding Cognome}" ImageSource="{Binding URLImmagine}"/>
+                    <TextCell Text="{Binding Nome}" Detail="{Binding Cognome}"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="{Binding URLImmagine}"></Image>
+                            <StackLayout Orientation="Vertical">
+                                <Label FontSize="Medium" Text="{Binding NomeCognome}"></Label>
+                                <Label FontSize="Caption" FontAttributes="Italic" Text="{Binding Dettagli}"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+        <ListView x:Name="lvStudenti" HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <!--<TextCell Text="{Binding Nome}" Detail="{Binding Cognome}" />-->
+                    <!--<ImageCell Text="{Binding Nome}" Detail="{Binding Cognome}" ImageSource="{Binding Immagine}"></ImageCell>-->
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Margin="10">
+                            <Image Source="{Binding URLImmagine}"
+                                WidthRequest="100"   HeightRequest="100"
+                                HorizontalOptions="Start" VerticalOptions="Center">
+
+                                <Image.Clip>
+                                    <EllipseGeometry Center="50,50" RadiusX="50" RadiusY="50"/>
+                                </Image.Clip>
+                            </Image>
+                            <StackLayout VerticalOptions="Center" Orientation="Vertical">
+                                <Label FontSize="Medium"  Text="{Binding NomeCognome}"></Label>
+                                <Label FontSize="Caption" FontAttributes="Italic" Text="{Binding Dettagli}"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>
